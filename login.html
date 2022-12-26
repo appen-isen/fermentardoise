@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>     
+    </head>
+    <body>
+      <header class="fixed flex justify-between p-2.5 bg-lime-600 top-0 w-full">
+        <h2 class="text-white"><a href="index.html">Fermentardoise</a></h2>
+        <div class="inline-flex space-x-3 group">
+          <input type="search" name="" id=""
+              class="bg-green-500 rounded-full align-middle hidden scale-0 px-2.5
+              text-white placeholder:text-white
+              focus:scale-100 group-focus-within:scale-100 focus:flex group-focus-within:flex"
+              placeholder="Rechercher">
+          <button class="bg-slate-400 rounded-xl px-1.5 focus:ring focus:ring-red-600">
+            rechercher
+          </button>
+        </div>
+      </header>
+      <main class="flex justify-center w-full h-[70vh]">
+        <div class="bg-blue-300 self-center flex flex-col p-3.5 w-[60vw] space-y-2.5">
+          <h3>Connexion</h3>
+          <div class="flex flex-col rounded-md shadow-sm">
+            <input type="email" name="" id="" placeholder="Mail" autocomplete="email" required
+            class="rounded-t-md border border-gray-500 px-2 py-1 w-full ring-0 placeholder:text-zinc-400
+            focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 focus:z-10">
+      
+            <input type="password" name="" id="" placeholder="Mot de passe" autocomplete="current-password" required
+            class="rounded-b-md border border-gray-500 px-2 py-1 w-full ring-0 placeholder:text-zinc-400
+            focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 focus:z-10">
+          </div>
+          <div class="flex items-center justify-between ">
+            <div class="flex items-center">
+              <input type="checkbox" name="" id="remember"
+                class="">
+              <label for="remember" class="ml-2 block text-sm text-gray-900">Se Souvenir de moi</label>
+            </div>
+            <div class="text-sm">
+              <a href="" class="font-medium text-indigo-600 hover:text-indigo-500">Mot de passe oublié ?</a>
+            </div>
+          </div>
+          <button type="submit" class="w-full bg-slate-200 rounded-md py-1 px-2">
+            Connexion
+          </button>
+        </div>
+      </main>
+      <footer class="fixed bottom-0 w-full text-center bg-lime-300 py-2">
+        Made with ❤️ & 🍺 by Appen
+      </footer>
+    </body>
+</html>

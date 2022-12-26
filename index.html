@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>     
+    </head>
+    <body>
+      <header class="fixed flex justify-between p-2.5 bg-lime-600 top-0 w-full">
+        <h2 class="text-white">Fermentardoise</h2>
+        <div class="flex gap-x-5">
+          <div class="inline-flex space-x-3 group">
+            <input type="search" name="" id=""
+                    class="bg-green-500 rounded-full align-middle hidden scale-0 px-2.5
+                    text-white placeholder:text-white
+                    focus:scale-100 group-focus-within:scale-100 focus:flex group-focus-within:flex"
+                    placeholder="Rechercher">
+            <button class="bg-slate-400 rounded-xl px-1.5 focus:ring focus:ring-red-600">
+              rechercher
+            </button>
+          </div>
+          <a href="login.html" class="rounded-full border bg-rose-600 text-white px-1.5 hover:bg-green-500">
+            Connexion
+          </a>
+        </div>
+      </header>
+      <main class="flex justify-center w-full h-screen">
+        <img src="public_html/img/temp_logo.png" alt="Logo Ferment'ISEN" class="self-center">
+      </main>
+      <footer class="fixed bottom-0 w-full text-center bg-lime-300 py-2">
+        Made with ❤️ & 🍺 by Appen
+      </footer>
+    </body>
+</html>
