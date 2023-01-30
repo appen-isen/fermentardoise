@@ -8,13 +8,13 @@
     <body>
       <header class="fixed flex justify-between p-2.5 bg-lime-600 top-0 w-full">
         <h2 class="text-white">Fermentardoise</h2>
-        <div class="flex gap-x-5">
-          <div class="inline-flex space-x-3 group">
+        <div class="flex gap-x-5 flex-wrap">
+          <div class="lg:inline-flex sm:max-lg:flex-col space-x-3 sm:max-lg:space-y-2 group peer">
             <input type="search" name="" id=""
-                    class="bg-green-500 rounded-full align-middle hidden scale-0 px-2.5
-                    text-white placeholder:text-white
-                    focus:scale-100 group-focus-within:scale-100 focus:flex group-focus-within:flex"
-                    placeholder="Rechercher">
+                class="bg-green-500 rounded-full align-middle hidden scale-0 px-2.5
+                text-white placeholder:text-white
+                lg:focus:scale-100 lg:group-focus-within:scale-100 lg:focus:flex lg:group-focus-within:flex"
+                placeholder="Rechercher">
             <button class="bg-slate-400 rounded-xl px-1.5 focus:ring focus:ring-red-600">
               rechercher
             </button>
@@ -22,6 +22,11 @@
           <a href="login.html" class="rounded-full border bg-rose-600 text-white px-1.5 hover:bg-green-500">
             Connexion
           </a>
+          <input type="search" name="" id=""
+                class="bg-green-500 rounded-full align-middle hidden scale-0 px-2.5
+                text-white placeholder:text-white
+                sm:max-lg:focus:scale-100 sm:max-lg:peer-focus-within:scale-100 sm:max-lg:focus:flex sm:max-lg:peer-focus-within:flex"
+                placeholder="Rechercher">
         </div>
       </header>
       <main class="flex justify-center w-full h-screen">
