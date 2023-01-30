@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>     
+    </head>
+    <body>
+      <header class="fixed flex justify-between p-2.5 bg-lime-600 top-0 w-full">
+        <h2 class="text-white">Fermentardoise</h2>
+        <div class="flex gap-x-5 flex-wrap">
+          <div class="lg:inline-flex sm:max-lg:flex-col space-x-3 sm:max-lg:space-y-2 group">
+            <input type="search" name="" id=""
+                class="bg-green-500 rounded-full align-middle hidden scale-0 px-2.5
+                text-white placeholder:text-white
+                focus:scale-100 group-focus-within:scale-100 focus:flex group-focus-within:flex"
+                placeholder="Rechercher">
+            <button class="bg-slate-400 rounded-xl px-1.5 focus:ring focus:ring-red-600">
+              rechercher
+            </button>
+            <a href="login.html" class="rounded-full border bg-rose-600 text-white px-1.5 hover:bg-green-500">
+              Connexion
+            </a>
+          </div>
+          <input type="search" name="" id=""
+                class="bg-green-500 rounded-full align-middle hidden scale-0 px-2.5
+                text-white placeholder:text-white
+                sm:max-lg:focus:scale-100 sm:max-lg:peer-focus-within:scale-100 sm:max-lg:focus:flex sm:max-lg:peer-focus-within:flex"
+                placeholder="Rechercher">
+        </div>
+      </header>
+      <main class="flex justify-center w-full h-screen">
+        <div class="fixed bg-slate-400 w-[95vw] top-16 p-3 space-y-5">
+          <div class="flex flex-row justify-between">
+            <div class="flex flex-col">
+              <h4>Prénom</h4>
+              <h4>Nom</h4>
+            </div>
+            <div>
+              Promo
+            </div>
+          </div>
+          <hr>
+          <div class="flex justify-center">
+            Reste à payer :
+          </div>
+          <hr>
+          <div class="flex justify-center">
+            HISTORIQUE
+          </div>
+        </div>
+      </main>
+      <footer class="fixed bottom-0 w-full text-center bg-lime-300 py-2">
+        Made with ❤️ & 🍺 by Appen
+      </footer>
+    </body>
+</html>
