@@ -1,14 +1,18 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>     
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- JQuery integration -->
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+      <script src="https://cdn.tailwindcss.com"></script>   
+      <script src="public_html/js/utils.js"></script>
+      <script src="public_html/js/home.js" defer></script>  
     </head>
     <body>
       <header class="fixed flex justify-between p-2.5 bg-lime-600 top-0 w-full">
         <h2 class="text-white">Fermentardoise</h2>
-        <div class="flex gap-x-5 flex-wrap">
+        <div class="flex gap-x-5 flex-wrap" id="header-right">
           <div class="lg:inline-flex sm:max-lg:flex-col space-x-3 sm:max-lg:space-y-2 group">
             <input type="search" name="" id=""
                 class="bg-green-500 rounded-full align-middle hidden scale-0 px-2.5
@@ -18,15 +22,11 @@
             <button class="bg-slate-400 rounded-xl px-1.5 focus:ring focus:ring-red-600">
               rechercher
             </button>
-            <a href="login.html" class="rounded-full border bg-rose-600 text-white px-1.5 hover:bg-green-500">
-              Connexion
-            </a>
           </div>
-          <input type="search" name="" id=""
-                class="bg-green-500 rounded-full align-middle hidden scale-0 px-2.5
-                text-white placeholder:text-white
-                sm:max-lg:focus:scale-100 sm:max-lg:peer-focus-within:scale-100 sm:max-lg:focus:flex sm:max-lg:peer-focus-within:flex"
-                placeholder="Rechercher">
+          <a href="login.html" class="rounded-full border bg-rose-600 text-white px-1.5 hover:bg-green-500" id="connexion">
+            Connexion
+          </a>
+          <div id="profile-info"></div>
         </div>
       </header>
       <main class="flex justify-center w-full h-screen">

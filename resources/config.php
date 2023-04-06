@@ -13,7 +13,7 @@
     const DB_PORT = '5432';
     const DB_NAME = 'fermentardoise';
     const DB_USER = 'postgres';
-    const DB_PASSWORD = '';
+    const DB_PASSWORD = 'new_password';
 
     // Some constants to use in the application
     const ACCESS_TOKEN_NAME = 'fermentardoise_session';
