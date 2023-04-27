@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- JQuery integration -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>   
+        <script src="public_html/js/utils.js"></script>
+        <script src="public_html/js/home.js" defer></script>
+        <script src="public_html/js/search.js" defer></script>
+    </head>
+    <body>
+        <header class="fixed flex justify-between p-2.5 bg-lime-600 top-0 w-full">
+            <h2 class="text-white">Fermentardoise</h2>
+            <div class="flex gap-x-5 flex-wrap" id="header-right">
+                <a href="login.html" class="rounded-full border bg-rose-600 text-white px-1.5 hover:bg-green-500" id="connexion">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                    </svg>            
+                </a>
+                <div id="profile-info" class="group"></div>
+            </div>
+        </header>
+    </body>
+</html>
