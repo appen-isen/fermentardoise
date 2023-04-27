@@ -12,8 +12,9 @@ DROP TABLE IF EXISTS payments CASCADE;
 -- Table users
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    login VARCHAR(255) NOT NULL,
-    password_hash VARCHAR(50) NOT NULL
+    email VARCHAR(255) NOT NULL,
+    password_hash VARCHAR(64) NOT NULL,
+    access_token VARCHAR(64)
 );
 
 -- Table clients
