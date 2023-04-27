@@ -170,15 +170,11 @@
         /**
          * Disconnects the user by deleting the access token.
          * 
+         * @param string $access_token 
+         * 
          * @throws AuthenticationException If the access token is invalid.
          */
-        public function disconnectUser(): bool{
-            if (!isset($_COOKIE[ACCESS_TOKEN_NAME])) {
-                return false;
-            }
-
-            $access_token = $_COOKIE[ACCESS_TOKEN_NAME];
-
+        public function disconnectUser($access_token): bool{
             if (!$this->verifyUserAccessToken($access_token)) {
                 throw new AuthenticationException();
             }
@@ -192,11 +188,32 @@
             $success = $statement->execute();
 
             // delete the session cookie
-            return $success && setcookie(
-                ACCESS_TOKEN_NAME,
-                '',
-                time() - 3600
-            );
+            unset($_COOKIE[ACCESS_TOKEN_NAME]); 
+            setcookie(ACCESS_TOKEN_NAME, '', -1, '/');
+            return $success;
+        }
+
+        /**
+         * Gets the user email
+         * 
+         * @param string $access_token
+         * 
+         * @return ?string 
+         */
+        public function getEmail(string $access_token): ?string{
+            if (!$this->verifyUserAccessToken($access_token)) {
+                throw new AuthenticationException();
+            }
+
+            $request = 'SELECT email from users where access_token = :access_token';
+
+            $statement = $this->PDO->prepare($request);
+            $statement->bindParam(':access_token', $access_token);
+            $statement->execute();
+
+            $result = $statement->fetch(PDO::FETCH_OBJ);
+            
+            return $result->email;
         }
 
         public function test(){

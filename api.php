@@ -85,12 +85,6 @@
             if (!isset($email) || !isset($password)) {
                 APIErrors::invalidRequest();
             }
-    
-            /*$access_token = $db->getUserAccessToken($email, $password);
-    
-            if (empty($access_token)) {
-                APIErrors::invalidRequest();
-            }*/
 
             try {
                 $result = $db->connectUser($email, $password, time()+14400);
@@ -110,7 +104,7 @@
             $authorization = getAuthorizationToken();
     
             try {
-                $db->removeUserAccessToken($authorization);
+                $db->disconnectUser($authorization);
             } catch (AuthenticationException $_) {
                 APIErrors::invalidGrant();
             }
@@ -119,7 +113,17 @@
             die(json_encode(array(
                 'message' => 'Authorization code delete successfully.'
             )));
-        
+        case 'getEmail' . 'POST':
+            $authorization = getAuthorizationToken();
+            try {
+                $result = $db->getEmail($authorization);
+            } catch (AuthenticationException $_) {
+                APIErrors::invalidGrant();
+            }
+    
+            http_response_code(200);
+            die(json_encode($result));
+
         case 'test' . 'GET' :
             http_response_code(200);
             die(json_encode(test()));

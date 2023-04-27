@@ -2,16 +2,25 @@ function profile(){
     if(getCookie('fermentardoise_session') != ""){
         $("#connexion").remove();
         $("#profile-info").load("public_html/html_elements/profile.html", () => {
-            $("#profile").click(() => {
-                if($("#deconnexion").hasClass("hidden")){
-                    $("#deconnexion").removeClass("hidden");
-                }else{
-                    $("#deconnexion").addClass("hidden");
+            $.ajax({
+                type: 'POST',
+                url: 'api.php/getEmail',
+                headers: {
+                    Authorization: 'Bearer ' + getCookie('fermentardoise_session')
                 }
+            }).done((data) => {
+                $("#profil_name").append(data);
             });
             $("#deconnect").click(() => {
-                deleteCookie( "fermentardoise_session", "/");
-                window.location.replace("index.html");
+                $.ajax({
+                    type: 'POST',
+                    url: 'api.php/logout',
+                    headers: {
+                        Authorization: 'Bearer ' + getCookie('fermentardoise_session')
+                    }
+                }).done((data) => {
+                    window.location.replace("index.html");
+                });
             });
         });
     }

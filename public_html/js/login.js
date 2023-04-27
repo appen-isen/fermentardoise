@@ -1,4 +1,7 @@
 function listener_login() {
+    if(getCookie('fermentardoise_session') != ""){
+        window.location.replace("index.html");
+    }
     document.getElementById("form_login").addEventListener("submit", function (event) {
         event.preventDefault();
         event.stopImmediatePropagation();
